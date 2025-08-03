@@ -94,8 +94,8 @@ export default function VideoClipMaker() {
 							</div>
 
 							<div className="space-y-8">
-							{/* Video URL Input */}
-							<div>
+								{/* Video URL Input */}
+								<div>
 								<label htmlFor="videoUrl" className="block text-sm font-semibold text-gray-9 mb-4 flex items-center">
 									<svg className="w-5 h-5 mr-2 text-accent-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -140,10 +140,10 @@ export default function VideoClipMaker() {
 										✨ Great! Video URL is valid and ready for processing
 									</p>
 								)}
-							</div>
+								</div>
 
-							{/* Clip Count Selection */}
-							<div>
+								{/* Clip Count Selection */}
+								<div>
 								<label className="block text-sm font-semibold text-gray-9 mb-4 flex items-center">
 									<svg className="w-5 h-5 mr-2 text-accent-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
@@ -208,8 +208,8 @@ export default function VideoClipMaker() {
 								</div>
 							</div>
 
-							{/* Selected Count Display */}
-							{getSelectedCount() && (
+								{/* Selected Count Display */}
+								{getSelectedCount() && (
 								<div className="bg-gradient-to-r from-green-900/20 to-blue-900/20 border-2 border-green-700/50 rounded-xl p-5 shadow-sm">
 									<div className="flex items-center justify-between">
 										<div className="flex items-center">
@@ -237,10 +237,10 @@ export default function VideoClipMaker() {
 										</div>
 									</div>
 								</div>
-							)}
+								)}
 
-							{/* Generate Button */}
-							<div className="pt-6">
+								{/* Generate Button */}
+								<div className="pt-6">
 								<button
 									onClick={handleMakeClips}
 									disabled={!canMakeClips() || isLoading}
@@ -263,6 +263,7 @@ export default function VideoClipMaker() {
 										</>
 									)}
 								</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -305,7 +306,7 @@ export default function VideoClipMaker() {
 										<p className="text-gray-6 text-sm">Download your professional clips instantly</p>
 									</div>
 								</div>
-							</div>
+								</div>
 						</div>
 
 						{/* Features Section */}
