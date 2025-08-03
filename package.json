@@ -6,12 +6,8 @@
 		"dev": "next dev --turbopack",
 		"dev:proxy": "whop-proxy --command=\"next dev --turbopack\"",
 		"build": "next build",
-		"build:production": "NODE_ENV=production next build",
 		"start": "next start",
-		"start:production": "NODE_ENV=production next start",
-		"lint": "next lint",
-		"export": "next build && next export",
-		"deploy": "npm run build:production && npm run start:production"
+		"lint": "next lint"
 	},
 	"dependencies": {
 		"@vercel/functions": "^2.0.3",
