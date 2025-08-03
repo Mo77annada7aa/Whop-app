@@ -55,20 +55,20 @@ export default function HomePage() {
 	};
 
 	return (
-		<div className="min-h-screen bg-gray-50">
+		<div className="min-h-screen bg-gray-900">
 			{/* Header */}
-			<div className="bg-white border-b border-gray-200">
+			<div className="bg-gray-800 border-b border-gray-700">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
 					<div className="flex items-center justify-between">
 						<div className="flex items-center space-x-4">
 							{/* Scissors Logo */}
-							<div className="w-12 h-12 bg-gradient-to-r from-accent-9 to-accent-10 rounded-lg flex items-center justify-center">
+							<div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
 								<svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
 								</svg>
 							</div>
 							{/* User Authentication - Small next to logo */}
-							<div className="text-sm text-gray-600">
+							<div className="text-sm text-gray-300">
 								Welcome, User
 							</div>
 						</div>
@@ -81,71 +81,67 @@ export default function HomePage() {
 				<div className="grid lg:grid-cols-3 gap-8">
 					{/* Left Column - Form */}
 					<div className="lg:col-span-2">
-						<div className="bg-white rounded-lg p-6 shadow-md">
+						<div className="bg-gray-800 border border-gray-700 rounded-lg p-6 shadow-lg hover:border-gray-600 transition-all duration-200">
 							<div className="mb-8">
-								<h2 className="text-5 font-semibold text-gray-9 mb-4 flex items-center">
-									<span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-accent-9 text-white mr-3">
-										<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-										</svg>
-									</span>
-									Create Your Clips
-								</h2>
-							</div>
+					<h2 className="text-3xl font-semibold text-white mb-4 flex items-center">
+						<svg className="w-8 h-8 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+						</svg>
+						Create Amazing Video Clips
+					</h2>
+					<p className="text-gray-300 text-lg">
+						Turn your long-form content into engaging short clips that capture attention and drive engagement across all social platforms.
+					</p>
+				</div>
 
 							<div className="space-y-8">
 								{/* Video URL Input */}
-								<div>
-									<label htmlFor="videoUrl" className="block text-sm font-semibold text-gray-9 mb-4 flex items-center">
-										<svg className="w-5 h-5 mr-2 text-accent-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-										</svg>
+								<div className="space-y-4">
+									<label className="block text-lg font-semibold text-white">
 										Video URL
 									</label>
 									<div className="relative">
 										<div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-											<svg className="h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<svg className="h-6 w-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 												<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
 											</svg>
 										</div>
 										<input
-											id="videoUrl"
-											type="url"
-											value={videoUrl}
-											onChange={(e) => setVideoUrl(e.target.value)}
-											placeholder="🎬 Paste your YouTube, Vimeo, or Twitch URL here..."
-											className="block w-full pl-14 pr-4 py-5 text-gray-9 border-2 border-gray-300 bg-gray-50 rounded-xl focus:ring-2 focus:ring-accent-9 focus:border-accent-9 transition-all duration-200 text-lg placeholder-gray-500 shadow-sm"
-										/>
-										{videoUrl && isValidUrl(videoUrl) && (
+												type="url"
+												value={videoUrl}
+												onChange={(e) => setVideoUrl(e.target.value)}
+												placeholder="🎬 Paste your video URL here (YouTube, TikTok, Instagram, etc.)"
+												className="block w-full pl-14 pr-4 py-5 text-white border-2 border-gray-600 rounded-xl bg-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:border-gray-500 transition-all duration-200 text-lg placeholder-gray-400 shadow-sm"
+											/>
+										{videoUrl && (
 											<div className="absolute inset-y-0 right-0 pr-4 flex items-center">
-												<svg className="h-6 w-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+												<svg className="h-6 w-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
 													<path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
 												</svg>
 											</div>
 										)}
 									</div>
+									{/* Validation Messages */}
 									{videoUrl && !isValidUrl(videoUrl) && (
-										<p className="mt-3 text-sm text-red-600 flex items-center bg-red-50 p-3 rounded-lg">
-											<svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-												<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-											</svg>
-											Please enter a valid video URL from YouTube, Vimeo, or Twitch
-										</p>
+										<div className="bg-red-900/30 border border-red-700 rounded-lg p-3">
+											<p className="text-red-400 text-sm">
+												⚠️ Please enter a valid video URL
+											</p>
+										</div>
 									)}
 									{videoUrl && isValidUrl(videoUrl) && (
-										<p className="mt-3 text-sm text-green-600 flex items-center bg-green-50 p-3 rounded-lg">
-											<svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-												<path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-											</svg>
-											✨ Great! Video URL is valid and ready for processing
-										</p>
+										<div className="bg-green-900/30 border border-green-700 rounded-lg p-3">
+											<p className="text-green-400 text-sm">
+												✅ Valid video URL detected
+											</p>
+										</div>
 									)}
 								</div>
 
 								{/* Clip Count Selection */}
 								<div>
-									<label className="block text-sm font-semibold text-gray-9 mb-4 flex items-center">
-										<svg className="w-5 h-5 mr-2 text-accent-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<label className="block text-lg font-semibold text-white mb-4 flex items-center">
+										<svg className="w-6 h-6 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
 										</svg>
 										Number of Clips
@@ -159,8 +155,8 @@ export default function HomePage() {
 												onClick={() => handlePresetSelect(count)}
 												className={`py-5 px-6 rounded-lg border-2 transition-all duration-200 font-bold text-lg relative overflow-hidden ${
 												selectedClipCount === count
-													? 'border-accent-9 bg-accent-9 text-white shadow-lg transform scale-105'
-													: 'border-gray-300 bg-gray-50 text-gray-700 hover:border-gray-400 hover:bg-gray-100 hover:shadow-md hover:transform hover:scale-102'
+													? 'border-blue-500 bg-blue-600 text-white shadow-lg transform scale-105'
+													: 'border-gray-600 bg-gray-700 text-white hover:border-gray-500 hover:bg-gray-600 hover:shadow-md hover:transform hover:scale-102'
 											}`}
 											>
 												<div className="flex items-center justify-center space-x-2">
@@ -183,21 +179,21 @@ export default function HomePage() {
 									{/* Custom Input */}
 									<div className="relative">
 										<div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-											<svg className="h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<svg className="h-6 w-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 												<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
 											</svg>
 										</div>
 										<input
-											type="number"
-											min="1"
-											max="50"
-											value={customClipCount}
-											onChange={(e) => handleCustomCountChange(e.target.value)}
-											placeholder="🎯 Or enter custom number (1-50)"
-											className={`block w-full pl-14 pr-4 py-5 text-gray-9 border-2 rounded-xl focus:ring-2 focus:ring-accent-9 focus:border-accent-9 transition-all duration-200 text-lg placeholder-gray-500 shadow-sm ${
-												customClipCount ? 'border-accent-9 bg-gray-50' : 'border-gray-300 bg-gray-50'
-											}`}
-										/>
+												type="number"
+												min="1"
+												max="50"
+												value={customClipCount}
+												onChange={(e) => handleCustomCountChange(e.target.value)}
+												placeholder="🎯 Or enter custom number (1-50)"
+												className={`block w-full pl-14 pr-4 py-5 text-white border-2 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:border-gray-500 transition-all duration-200 text-lg placeholder-gray-400 shadow-sm ${
+													customClipCount ? 'border-blue-500 bg-gray-700' : 'border-gray-600 bg-gray-700'
+												}`}
+											/>
 										{customClipCount && (
 											<div className="absolute inset-y-0 right-0 pr-4 flex items-center">
 												<svg className="h-6 w-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -210,28 +206,28 @@ export default function HomePage() {
 
 								{/* Selected Count Display */}
 								{getSelectedCount() && (
-									<div className="bg-gradient-to-r from-green-900/20 to-blue-900/20 border-2 border-green-700/50 rounded-xl p-5 shadow-sm">
+									<div className="bg-gradient-to-r from-blue-900/30 to-blue-900/30 border-2 border-blue-700/50 rounded-xl p-5 shadow-sm">
 										<div className="flex items-center justify-between">
 											<div className="flex items-center">
-												<div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mr-3">
+												<div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-3">
 													<svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
 														<path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
 													</svg>
 												</div>
 												<div>
-													<p className="text-green-300 font-bold text-lg">
+													<p className="text-blue-300 font-bold text-lg">
 														Ready to Process!
 													</p>
-													<p className="text-green-400 text-sm">
+													<p className="text-blue-400 text-sm">
 														Creating {getSelectedCount()} clips from your video
 													</p>
 												</div>
 											</div>
 											<div className="text-right">
-												<div className="text-2xl font-bold text-green-400">
+												<div className="text-2xl font-bold text-blue-400">
 													{getSelectedCount()}
 												</div>
-												<div className="text-xs text-green-500">
+												<div className="text-xs text-blue-500">
 													clips
 												</div>
 											</div>
@@ -244,8 +240,7 @@ export default function HomePage() {
 									<button
 										onClick={handleMakeClips}
 										disabled={!canMakeClips() || isLoading}
-										className="w-full bg-accent-9 hover:bg-accent-10 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-bold py-6 px-8 rounded-lg transition-all duration-200 text-xl shadow-md disabled:opacity-50 flex items-center justify-center space-x-3"
-									>
+										className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-bold py-6 px-8 rounded-lg transition-all duration-200 text-xl shadow-md disabled:opacity-50 flex items-center justify-center space-x-3 border-2 border-blue-500 hover:border-blue-400 disabled:border-gray-600">
 										{isLoading ? (
 											<>
 												<svg className="w-8 h-8 animate-spin" fill="none" viewBox="0 0 24 24">
@@ -271,84 +266,84 @@ export default function HomePage() {
 					{/* Right Column - How it Works */}
 					<div className="space-y-6">
 						{/* How it Works */}
-						<div className="bg-white rounded-lg p-6 shadow-md">
-							<h3 className="text-lg font-semibold text-gray-9 mb-4 flex items-center">
-								<svg className="w-6 h-6 mr-2 text-accent-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<div className="bg-gray-800 border border-gray-700 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+							<h3 className="text-lg font-semibold text-white mb-4 flex items-center">
+								<svg className="w-6 h-6 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
 								</svg>
 								How It Works
 							</h3>
 							<div className="space-y-4">
 								<div className="flex items-start">
-									<div className="flex-shrink-0 w-8 h-8 bg-accent-9 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">
+									<div className="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">
 										1
 									</div>
 									<div>
-										<h4 className="font-semibold text-gray-9">Paste URL</h4>
-										<p className="text-gray-6 text-sm">Add your video link from any supported platform</p>
+										<h4 className="font-semibold text-white">Paste URL</h4>
+										<p className="text-gray-300 text-sm">Add your video link from any supported platform</p>
 									</div>
 								</div>
 								<div className="flex items-start">
-									<div className="flex-shrink-0 w-8 h-8 bg-accent-9 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">
+									<div className="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">
 										2
 									</div>
 									<div>
-										<h4 className="font-semibold text-gray-9">Choose Count</h4>
-										<p className="text-gray-6 text-sm">Select how many clips you want to create</p>
+										<h4 className="font-semibold text-white">Choose Count</h4>
+										<p className="text-gray-300 text-sm">Select how many clips you want to create</p>
 									</div>
 								</div>
 								<div className="flex items-start">
-									<div className="flex-shrink-0 w-8 h-8 bg-accent-9 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">
+									<div className="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">
 										3
 									</div>
 									<div>
-										<h4 className="font-semibold text-gray-9">Get Results</h4>
-										<p className="text-gray-6 text-sm">Download your professional clips instantly</p>
+										<h4 className="font-semibold text-white">Get Results</h4>
+										<p className="text-gray-300 text-sm">Download your professional clips instantly</p>
 									</div>
 								</div>
 							</div>
 						</div>
 
 						{/* Features Section */}
-						<div className="bg-white rounded-lg p-6 shadow-md">
-							<h3 className="text-lg font-semibold text-gray-9 mb-4 flex items-center">
-								<svg className="w-6 h-6 mr-2 text-accent-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<div className="bg-gray-800 border border-gray-700 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+							<h3 className="text-lg font-semibold text-white mb-4 flex items-center">
+								<svg className="w-6 h-6 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
 								</svg>
 								Key Features
 							</h3>
 							<div className="space-y-4">
 								<div className="flex items-start">
-									<div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3">
-										<svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<div className="w-10 h-10 bg-green-900/50 border border-green-700 rounded-lg flex items-center justify-center mr-3">
+										<svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
 										</svg>
 									</div>
 									<div>
-										<h4 className="font-semibold text-gray-9">⚡ Lightning Fast</h4>
-										<p className="text-gray-6 text-sm">AI-powered processing creates your clips in minutes, not hours.</p>
+										<h4 className="font-semibold text-white">⚡ Lightning Fast</h4>
+										<p className="text-gray-300 text-sm">AI-powered processing creates your clips in minutes, not hours.</p>
 									</div>
 								</div>
 								<div className="flex items-start">
-									<div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
-										<svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<div className="w-10 h-10 bg-purple-900/50 border border-purple-700 rounded-lg flex items-center justify-center mr-3">
+										<svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
 										</svg>
 									</div>
 									<div>
-										<h4 className="font-semibold text-gray-9">🧠 Smart Selection</h4>
-										<p className="text-gray-6 text-sm">Advanced AI identifies the most engaging moments automatically.</p>
+										<h4 className="font-semibold text-white">🧠 Smart Selection</h4>
+										<p className="text-gray-300 text-sm">Advanced AI identifies the most engaging moments automatically.</p>
 									</div>
 								</div>
 								<div className="flex items-start">
-									<div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
-										<svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<div className="w-10 h-10 bg-blue-900/50 border border-blue-700 rounded-lg flex items-center justify-center mr-3">
+										<svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
 										</svg>
 									</div>
 									<div>
-										<h4 className="font-semibold text-gray-9">🚀 Ready to Share</h4>
-										<p className="text-gray-6 text-sm">Clips are optimized for social media platforms.</p>
+										<h4 className="font-semibold text-white">🚀 Ready to Share</h4>
+										<p className="text-gray-300 text-sm">Clips are optimized for social media platforms.</p>
 									</div>
 								</div>
 							</div>
