@@ -3,10 +3,15 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"dev": "whop-proxy --command 'next dev --turbopack'",
+		"dev": "next dev --turbopack",
+		"dev:proxy": "whop-proxy --command=\"next dev --turbopack\"",
 		"build": "next build",
+		"build:production": "NODE_ENV=production next build",
 		"start": "next start",
-		"lint": "next lint"
+		"start:production": "NODE_ENV=production next start",
+		"lint": "next lint",
+		"export": "next build && next export",
+		"deploy": "npm run build:production && npm run start:production"
 	},
 	"dependencies": {
 		"@vercel/functions": "^2.0.3",

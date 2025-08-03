@@ -92,18 +92,41 @@ export default function Page() {
 					</div>
 				</div>
 
-				<div className="mt-12 text-center text-2 text-gray-5">
-					<p>
-						Need help? Visit the{" "}
+				<div className="mt-12 space-y-6">
+					<div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-200">
+						<h3 className="text-lg font-semibold text-blue-900 mb-3">
+							🎬 Video Clip Maker Demo
+						</h3>
+						<p className="text-blue-800 mb-4">
+							Try out the professional video clip maker interface! This demo shows the complete UI without requiring Whop authentication.
+						</p>
 						<a
-							href="https://dev.whop.com"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-accent-9 hover:text-accent-10 underline"
+							href="/clip-maker"
+							className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-colors mr-3"
 						>
-							Whop Documentation
+							🎥 Try Clip Maker →
 						</a>
-					</p>
+						<a
+							href="/example"
+							className="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+						>
+							View Example Page →
+						</a>
+					</div>
+					
+					<div className="text-center text-2 text-gray-5">
+						<p>
+							Need help? Visit the{" "}
+							<a
+								href="https://dev.whop.com"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-accent-9 hover:text-accent-10 underline"
+							>
+								Whop Documentation
+							</a>
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>

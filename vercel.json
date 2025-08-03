@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "name": "whop-ai-video-clip-maker",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "env": {
+    "WHOP_API_KEY": "@whop-api-key",
+    "NEXT_PUBLIC_WHOP_APP_ID": "@whop-app-id",
+    "NEXT_PUBLIC_WHOP_AGENT_USER_ID": "@whop-agent-user-id",
+    "NEXT_PUBLIC_WHOP_COMPANY_ID": "@whop-company-id"
+  },
+  "functions": {
+    "app/api/**/*.ts": {
+      "runtime": "@vercel/node"
+    }
+  },
+  "regions": ["iad1"],
+  "framework": "nextjs"
+}
